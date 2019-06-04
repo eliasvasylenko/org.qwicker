@@ -1,1 +1,1 @@
-# org.qwicker
+# org.wicka
