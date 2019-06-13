@@ -22,13 +22,13 @@ At run time we don't need to take any special measures, so far as the platform i
 
 We want our ES6 artifacts to be made-available at run time, either in a private 
 
-Because the framework checks that all our requirements are fulfilled when our bundles are started, in order for other bundles to depend on those materialized through our repository implementation they need to be installed at launch, which means we need a special launcher implementation which is aware of statically configured OSGi repositories.
+Because the framework checks that all our requirements are fulfilled when our bundles are started, in order for other bundles to depend on those materialized through our repository implementation they need to be installed at launch, which means we need a special launcher implementation which is aware of statically configured OSGi repositories. Due to the general nature of OSGi repositories, this launcher should be general-purpose enough to enable other interesting use-cases.
 
 ## Wrap ES6 Modules in Connect Bundles
 
 As per https://github.com/osgi/design/blob/master/rfps/rfp-0196-OSGiConnect.pdf
 
-- Can be loaded directly from the filesystem (or anywhere else via classloader), no need for Jar bundling.
+- Can be loaded directly from the filesystem (or anywhere else, via a classloader), no need for unnecessary Jar bundling and possible duplication of data on disk.
 - Again may need a special launcher which is aware of how to install them.
 - How do we resolve them at deploy them at build time? May need special build tooling.
 
@@ -36,4 +36,4 @@ As per https://github.com/osgi/design/blob/master/rfps/rfp-0196-OSGiConnect.pdf
 
 As per https://github.com/osgi/design/blob/master/rfcs/rfc0241/rfc-0241-Features.pdf
 
-With respect to the build-time resolution problem above. Our build tooling now just needs to generate a feature which forwards the appropriate capabilities, which can then be bundled as part of the application.
+With respect to the build-time resolution problem above. Our build tooling now just needs to generate a feature which forwards the appropriate capabilities, which can then be bundled as part of the application. The extensibility model may provide an avenue for ensuring colocation of bundles with the appropriate resources for deployment.
