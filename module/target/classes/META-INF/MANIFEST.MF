@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1560507670200
+Bundle-Description: "The module API"
+Bundle-Developers: eliasvasylenko;email="elias@vasylenko.uk";name="Eli
+ as N Vasylenko"
+Bundle-DocURL: https://github.com/StrangeSkies/org.wicka/module
+Bundle-License: LGPL;link="http://www.gnu.org/licenses/"
+Bundle-ManifestVersion: 2
+Bundle-Name: Wicka Module
+Bundle-SCM: url="https://github.com/StrangeSkies/org.wicka/module",tag
+ =HEAD
+Bundle-SymbolicName: module
+Bundle-Vendor: Strange Skies
+Bundle-Version: 0.0.1.201906141021
+Created-By: 11.0.3 (Oracle Corporation)
+Import-Package: org.osgi.framework;version="[1.9,2)"
+Private-Package: org.wicka.module,org.wicka.module.local
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=11))"
+Tool: Bnd-4.2.0.201903051501
+
